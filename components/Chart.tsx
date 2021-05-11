@@ -1,6 +1,6 @@
 import { Line } from '@ant-design/charts'
 
-const Chart = (props) => {
+const Chart = (props: { data: {minutes: number, memory: number, lib: string}[] }) => {
     return (
         <Line
             data={props.data}
