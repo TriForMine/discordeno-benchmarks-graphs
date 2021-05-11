@@ -9,7 +9,6 @@ const Chart = (props: { data: {minutes: number, memory: number, lib: string}[] }
             yField="memory"
             seriesField='lib'
             smooth
-            start={1}
             color={
                 ['#1979C9', '#D62A0D', '#FAA219']
             }
@@ -23,13 +22,6 @@ const Chart = (props: { data: {minutes: number, memory: number, lib: string}[] }
             }}
             legend={ {
                 position: 'top',
-            }}
-            title="Memory usage over time"
-            showTitle
-            background={{
-                style: {
-                    backgroundColor: 'white'
-                }
             }}
             label={{
                 formatter: (text) => {
