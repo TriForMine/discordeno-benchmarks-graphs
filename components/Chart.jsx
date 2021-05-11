@@ -10,12 +10,14 @@ const Chart = (props) => {
             seriesField='lib'
             smooth
             start={1}
+            color={
+                ['#1979C9', '#D62A0D', '#FAA219']
+            }
             point ={{
-                size: 1,
+                size: 2,
                 shape: 'diamond',
                 style: {
                     fill: 'white',
-                    stroke: '#5B8FF9',
                     lineWidth: 1,
                 }
             }}
@@ -29,7 +31,6 @@ const Chart = (props) => {
                     backgroundColor: 'white'
                 }
             }}
-            theme="dark"
             label={{
                 formatter: (text) => {
                     return `${text.memory.toFixed(2)} MB`
