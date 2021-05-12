@@ -13,21 +13,20 @@ const Chart = (props: { data: {minutes: number, memory: number, lib: string}[] }
             color={
                 ['#1979C9', '#D62A0D', '#FAA219']
             }
-            point ={{
-                size: 2,
-                shape: 'diamond',
-                style: {
-                    fill: 'white',
-                    lineWidth: 1,
+            padding="auto"
+            tooltip = {
+                {
+                    formatter: (data) => {
+                        return { name: data.lib, value: data.memory + 'MB' }
+                    },
+                    title: 'minutes'
                 }
-            }}
+            }
             legend={ {
                 position: 'top',
-            }}
-            label={{
-                formatter: (text) => {
-                    return `${text.memory.toFixed(2)} MB`
-                },
+                title: {
+                    text: 'Memory Usage over Time'
+                }
             }}
             yAxis ={
                 {
@@ -36,6 +35,9 @@ const Chart = (props: { data: {minutes: number, memory: number, lib: string}[] }
                             return `${v} MB`;
                         },
                     },
+                    title: {
+                        text: 'Memory Usage (MB)'
+                    }
                 }
             }
             xAxis = {
@@ -44,6 +46,9 @@ const Chart = (props: { data: {minutes: number, memory: number, lib: string}[] }
                         formatter: function formatter(v) {
                             return `${v}m`
                         }
+                    },
+                    title: {
+                        text: 'Time (Min)'
                     }
                 }
             }
