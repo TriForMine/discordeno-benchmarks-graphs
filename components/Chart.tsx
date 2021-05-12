@@ -9,6 +9,7 @@ const Chart = (props: { data: {minutes: number, memory: number, lib: string}[] }
             yField="memory"
             seriesField='lib'
             smooth
+            slider={{}}
             color={
                 ['#1979C9', '#D62A0D', '#FAA219']
             }
