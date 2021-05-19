@@ -11,7 +11,7 @@ const Chart = (props: { data: {minutes: number, memory: number, lib: string}[] }
             smooth
             slider={{}}
             color={
-                ['#1979C9', '#D62A0D', '#FAA219']
+                ['#1979C9', '#D62A0D', '#FAA219', '#388e3c']
             }
             padding="auto"
             tooltip = {
