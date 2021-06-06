@@ -1,23 +1,23 @@
 import { Line } from '@ant-design/charts'
 
-const Chart = (props: { data: {minutes: number, memory: number, lib: string}[] }) => {
+const Chart = (props: { data: {minutes: number, rss: number, heapUsed: number, heapTotal: number, lib: string, guilds: number, members: number, messages: number, channels: number}[], field: string }) => {
     return (
         <Line
             data={props.data}
             height={600}
             xField="minutes"
-            yField="memory"
+            yField={props.field}
             seriesField='lib'
             smooth
             slider={{}}
             color={
-                ['#1979C9', '#D62A0D', '#FAA219', '#388e3c']
+                ['#795548','#1979C9', '#D62A0D', '#FAA219', '#388e3c']
             }
             padding="auto"
             tooltip = {
                 {
                     formatter: (data) => {
-                        return { name: data.lib, value: data.memory + 'MB' }
+                        return { name: data.lib, value: data[props.field] + 'MB' }
                     },
                     title: 'minutes'
                 }
